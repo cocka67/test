@@ -1,0 +1,130 @@
+.button {
+    width: 146px;
+    height: 45px;
+    border: 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: rgba(21, 93, 164, 1);
+    color: rgba(255, 255, 255, 1);
+    border-radius: 8px;
+}
+
+.search-field {
+    width: 100%;
+    height: 43px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: rgba(176, 176, 176, 1);
+    border: rgba(176, 176, 176, 1) 0.5px solid;
+    padding: 10px;
+}
+
+.search-field:focus-visible {
+    outline: none; 
+    border: none; 
+    color: inherit; 
+    box-shadow: none; 
+}
+
+.search-field:focus {
+    border: 0.5px solid rgba(21, 93, 164, 1);
+    color: rgba(129, 129, 129, 1) ;
+    -webkit-appearance: none ;
+    -moz-appearance: none ;
+    appearance: none ;
+}
+
+
+.selected-filters{
+    background: rgba(242, 242, 242, 1);
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+body.dark-theme .selected-filters {
+    background-color: rgba(41, 41, 41, 1);
+    color: rgba(245, 245, 245, 1);
+}
+
+.filters-conteiner{
+    display: flex;
+    justify-content: space-between;
+    height: 71px;
+    background: rgb(242, 242, 242);
+    margin-top: 28px;
+    align-items: center;
+    padding: 0px 180px;
+}
+
+.filters{
+    display: flex;
+}
+
+.filter-item{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    margin-right: 16px;
+    height: 39px;
+    font-size: 16px;
+    align-items: center;
+}
+
+.filter-remove{
+    display: flex;
+    width: 10px;
+    height: 10px;
+}
+
+.filter-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+}
+
+.filter-items h3{
+    font-weight: 500;
+}
+
+
+@media (width <=768px) {
+    .filters-conteiner{
+        padding: 16px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        height: auto;
+    }
+
+    .filter-items{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .filters{
+        gap: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    }
+
+    .filter-item{
+        margin-right: 0px;
+    }
+
+    .button{
+        width: 272px;
+        height: 28px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  }

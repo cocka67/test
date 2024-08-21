@@ -1,0 +1,81 @@
+.employeeList {
+  padding: 0 180px;
+  width: 100%;
+}
+
+.employeeList-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-wrapper {
+  overflow-x: auto; /* Добавляем горизонтальный скролл */
+  -webkit-overflow-scrolling: touch; /* Для плавного скролла на мобильных устройствах */
+}
+
+.employeeList-container .list{
+  display: none;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* Минимальная ширина таблицы, чтобы она не сжималась слишком сильно на узких экранах */
+}
+
+.table th,
+.table td {
+  padding: 28px 0;
+  text-align: left;
+  border-bottom: 1px solid rgba(242, 242, 242, 1);
+}
+
+.table th {
+  font-weight: 500;
+  color: rgba(176, 176, 176, 1);
+}
+
+.table tr {
+  height: 79px;
+}
+
+.table tr:hover {
+  background-color: rgba(242, 242, 242, 1);
+}
+
+.table thead tr:hover:first-child {
+  background-color: inherit;
+}
+
+.page_path {
+  gap: 16px;
+  display: flex;
+  font-size: 18px;
+  color: rgba(176, 176, 176, 1);
+  padding: 28px 0;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .employeeList {
+    padding: 0 24px;
+  }
+
+  .page_path {
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  .table-wrapper {
+    margin-bottom: 20px; /* Добавляем отступ снизу для удобства */
+  }
+
+  .table tr {
+    height: 66px;
+  }
+
+  .employeeList-container .list{
+    font-size: 20px;
+    display: flex;
+  }
+}

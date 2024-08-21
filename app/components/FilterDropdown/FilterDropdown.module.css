@@ -1,0 +1,158 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+  /* Фиксированная ширина, чтобы предотвратить сдвиг */
+}
+
+.dropdown_conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0 40px;
+}
+
+.dropdown_conteiner h2 {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 100%;
+}
+
+.dropdown-btn .color-blue {
+  color: rgba(21, 93, 164, 1)
+}
+
+.arrow {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.arrow.up {
+  transform: rotate(180deg);
+}
+
+.arrow.up2 {
+  transform: rotate(180deg);
+}
+
+.arrow.up3 {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: flex;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-top: 1px solid #155DA4;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 10;
+  width: 320px;
+  background: white;
+  /* Чтобы dropdown-content соответствовал ширине кнопки */
+}
+
+.dropdown-content label {
+  display: flex;
+  padding-bottom: 16px;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-items: baseline;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.dropdown_menu {
+  display: flex;
+  gap: 28px
+}
+
+
+.checkbox-input {
+  appearance: none;
+  /* Убираем стандартное отображение чекбокса */
+  position: relative;
+  width: 19px;
+  height: 19px;
+  background: white;
+  border-radius: 2px;
+  border: 1px solid rgba(21, 93, 164, 1);
+  cursor: pointer;
+  /* Устанавливаем курсор указателя */
+  display: inline-block;
+}
+
+.checkbox-input::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 13px;
+  height: 9px;
+  background: url("/images/tick.svg") no-repeat center center;
+  background-size: contain;
+  transform: translate(-50%, -50%) scale(0);
+  /* Скрываем галочку изначально */
+  transition: transform 0.2s ease;
+  /* Анимация для плавного появления галочки */
+}
+
+.checkbox-input:checked {
+  background-color: rgba(21, 93, 164, 1);
+  /* Закрашиваем чекбокс в синий цвет при выборе */
+  border-color: rgba(21, 93, 164, 1);
+  /* Меняем цвет границы при выборе */
+}
+
+.checkbox-input:checked::after {
+  transform: translate(-50%, -50%) scale(1);
+  /* Показываем галочку */
+}
+
+.checkbox-input:disabled {
+  background: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+  /* Меняем курсор на запрещающий */
+}
+
+.checkbox-input:disabled::after {
+  filter: grayscale(100%);
+  /* Делаем галочку серой при отключенном чекбоксе */
+}
+
+@media (width <=768px) {
+  .dropdown_conteiner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dropdown_conteiner h2 {
+    font-size: 20px;
+  }
+
+  .dropdown-content {
+    left: 0;
+    width: 230px;
+  }
+
+  .dropdown:last-child  .dropdown-content{
+    right: 0;
+    left: auto;
+  }
+
+  .dropdown_conteiner h2{
+    display: none;
+  }
+
+}
