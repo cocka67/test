@@ -1,11 +1,11 @@
-import './globals.css';  // Подключаем глобальные стили
-import { Header } from './components/Header/Header'; // Импортируем Header
+import './globals.css'; 
+import { Header } from './components/Header/Header'; 
 
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">
       <body>
-         <Header /> {/* Добавляем Header, чтобы он отображался на всех страницах */}
+         <Header />
         {children}
       </body>
     </html>

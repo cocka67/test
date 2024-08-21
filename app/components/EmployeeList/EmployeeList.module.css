@@ -9,8 +9,8 @@
 }
 
 .table-wrapper {
-  overflow-x: auto; /* Добавляем горизонтальный скролл */
-  -webkit-overflow-scrolling: touch; /* Для плавного скролла на мобильных устройствах */
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch; 
 }
 
 .employeeList-container .list{
@@ -20,7 +20,7 @@
 .table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 600px; /* Минимальная ширина таблицы, чтобы она не сжималась слишком сильно на узких экранах */
+  min-width: 600px; 
 }
 
 .table th,
@@ -67,7 +67,7 @@
   }
 
   .table-wrapper {
-    margin-bottom: 20px; /* Добавляем отступ снизу для удобства */
+    margin-bottom: 20px;
   }
 
   .table tr {

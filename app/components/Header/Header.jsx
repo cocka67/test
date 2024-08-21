@@ -24,7 +24,6 @@ export const Header = () => {
     document.body.classList.toggle("dark-theme", !isDarkTheme);
     localStorage.setItem("theme", newTheme);
 
-    // Триггерим событие для изменения изображений в других компонентах
     window.dispatchEvent(new Event("storage"));
   };
 

@@ -12,7 +12,6 @@ export const getEmployees = async (params) => {
   }
 };
 
-// Функция для получения данных конкретного сотрудника
 export const getEmployeeById = async (id) => {
   try {
     const response = await axios.get(`${API_BASE_URL}/employee/${id}`);

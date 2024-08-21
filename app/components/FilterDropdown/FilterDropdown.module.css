@@ -1,7 +1,6 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  /* Фиксированная ширина, чтобы предотвратить сдвиг */
 }
 
 .dropdown_conteiner {
@@ -59,7 +58,6 @@
   z-index: 10;
   width: 320px;
   background: white;
-  /* Чтобы dropdown-content соответствовал ширине кнопки */
 }
 
 .dropdown-content label {
@@ -80,7 +78,6 @@
 
 .checkbox-input {
   appearance: none;
-  /* Убираем стандартное отображение чекбокса */
   position: relative;
   width: 19px;
   height: 19px;
@@ -88,7 +85,6 @@
   border-radius: 2px;
   border: 1px solid rgba(21, 93, 164, 1);
   cursor: pointer;
-  /* Устанавливаем курсор указателя */
   display: inline-block;
 }
 
@@ -102,33 +98,26 @@
   background: url("/images/tick.svg") no-repeat center center;
   background-size: contain;
   transform: translate(-50%, -50%) scale(0);
-  /* Скрываем галочку изначально */
   transition: transform 0.2s ease;
-  /* Анимация для плавного появления галочки */
 }
 
 .checkbox-input:checked {
   background-color: rgba(21, 93, 164, 1);
-  /* Закрашиваем чекбокс в синий цвет при выборе */
   border-color: rgba(21, 93, 164, 1);
-  /* Меняем цвет границы при выборе */
 }
 
 .checkbox-input:checked::after {
   transform: translate(-50%, -50%) scale(1);
-  /* Показываем галочку */
 }
 
 .checkbox-input:disabled {
   background: #ccc;
   border-color: #ccc;
   cursor: not-allowed;
-  /* Меняем курсор на запрещающий */
 }
 
 .checkbox-input:disabled::after {
   filter: grayscale(100%);
-  /* Делаем галочку серой при отключенном чекбоксе */
 }
 
 @media (width <=768px) {

@@ -19,23 +19,23 @@ const EmployeeList = () => {
     stack: []
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [hasMore, setHasMore] = useState(true); // Следим, есть ли еще данные для загрузки
-  const observerRef = useRef(null); // Реф для наблюдателя
+  const [hasMore, setHasMore] = useState(true);
+  const observerRef = useRef(null);
 
-  // Сбрасываем страницу и состояние hasMore при изменении поиска или фильтров
+
   useEffect(() => {
     setPage(1);
     setHasMore(true);
-    loadEmployees(true); // Загружаем первую страницу при изменении фильтров или поиска
+    loadEmployees(true);
   }, [searchQuery, filters]);
 
   useEffect(() => {
-    if (!hasMore || isLoading) return; // Если больше нет данных или идет загрузка, выходим
+    if (!hasMore || isLoading) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          setPage((prevPage) => prevPage + 1); // Увеличиваем страницу
+          setPage((prevPage) => prevPage + 1);
         }
       },
       { threshold: 1.0 }
@@ -54,7 +54,7 @@ const EmployeeList = () => {
 
   useEffect(() => {
     if (page > 1) {
-      loadEmployees(false); // Загружаем следующие страницы
+      loadEmployees(false);
     }
   }, [page]);
 
@@ -72,17 +72,17 @@ const EmployeeList = () => {
 
       const data = await getEmployees(params);
       if (data.length === 0) {
-        setHasMore(false); // Если данных больше нет, отключаем подгрузку
+        setHasMore(false);
       } else {
         if (initialLoad) {
-          setEmployees(data); // Заменяем данные на первой странице
+          setEmployees(data);
         } else {
-          setEmployees((prevEmployees) => [...prevEmployees, ...data]); // Добавляем данные к уже загруженным
+          setEmployees((prevEmployees) => [...prevEmployees, ...data]);
         }
       }
     } catch (error) {
       console.error('Failed to load employees', error);
-      setHasMore(false); // В случае ошибки, тоже отключаем подгрузку
+      setHasMore(false);
     }
     setIsLoading(false);
   };

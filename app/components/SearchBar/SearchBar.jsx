@@ -8,13 +8,11 @@ const SearchBar = ({ setSearchQuery, filters, setFilters }) => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   useEffect(() => {
-    // Проверяем текущую тему при загрузке
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       setIsDarkTheme(savedTheme === "dark");
     }
 
-    // Слушаем изменения темы
     const handleThemeChange = () => {
       const theme = localStorage.getItem("theme");
       setIsDarkTheme(theme === "dark");
